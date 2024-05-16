@@ -1,0 +1,35 @@
+CLASE 1 ------------------------------------------
+
+Metodos de arrays : en general - .map , .filter , .find
+Destructuring 
+Rest/Spread operator (...)
+Arrow functions
+Modulos
+
+
+
+CLASE 2 ------------------------------------------
+
+1) Instalacion de Node.js
+2) Verificar versiones de node.js y NPM (superior a 18.x y 8.x respectivamente)
+3) Instalacion del entorno : Vite.js
+
+webpack + babel
+
+
+Need to install the following packages:
+create-vite@5.2.3
+
+Correr a ejecutar la app
+
+Node.js : Entorno de ejecucion de Javascript
+
+
+
+pwd : nos muestra la ruta actual
+
+
+> npm create vite@latest : crea un proyecto de vite, es decir, nos crea una carpeta con archivos en el sistema operativo
+> cd nombreCarpeta : nos movemos a la carpeta creada
+> npm install : instala las dependencias del proyecto
+> npm run dev : corre el proyecto en modo desarrollo
