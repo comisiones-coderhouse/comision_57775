@@ -33,3 +33,13 @@ pwd : nos muestra la ruta actual
 > cd nombreCarpeta : nos movemos a la carpeta creada
 > npm install : instala las dependencias del proyecto
 > npm run dev : corre el proyecto en modo desarrollo
+
+
+
+CLASE 3 ------------------------------------------
+
+JSX
+
+JSX es una extension de la sintaxis de JavaScript que nos permite escribir HTML en JavaScript de manera mas sencilla y legible y que luego es transformado a JavaScript puro mediante Babel.
+
+< App />

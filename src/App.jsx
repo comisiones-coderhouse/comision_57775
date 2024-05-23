@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Header from "./Header.jsx"
+/* 
+App es un componente
+
+Componentes : 
+
+- Son funciones
+- Van en mayusculas (por el compilador)
+- si o si tienen que tener retorno
+- Solo pueden retornar UN solo elemento
+
+Tipos de Componentes : 
+
+- Estructurales : Son los que representan una plantilla general o un bloque generico del sitio/aplicacion
+
+
+*/
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  //const titulo = document.createElement("h1")
+  //titulo.textContent = "Hola Mundo desde un p"
+  //titulo.id = "titulo"
+  //titulo.className = "titulo"
+  //return <h1 id="titulo" className="titulo">Hola Mundo desde un p</h1>
+  //Header()
+  //<Header/>
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header/>
+      <main>
+        <h2>Home</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere natus esse numquam nihil dignissimos eligendi, vel saepe pariatur aut voluptatum, ut excepturi eius doloremque exercitationem dolores cumque? Odit, saepe tempore?</p>
+      </main>
+      <footer>
+        <p>Copyright &copy; - Horacio Gutierrez</p>
+      </footer>
     </>
   )
 }
 
-export default App
+//App()
+//<App/>
+
+export default App;
