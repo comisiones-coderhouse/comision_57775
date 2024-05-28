@@ -1,4 +1,6 @@
-import Header from "./Header.jsx"
+import Header from "./componentes/Header.jsx"
+import Footer from "./componentes/Footer.jsx";
+import Main from "./componentes/Main.jsx"
 /* 
 App es un componente
 
@@ -13,6 +15,7 @@ Tipos de Componentes :
 
 - Estructurales : Son los que representan una plantilla general o un bloque generico del sitio/aplicacion
 
+- Reutilizables : Son los que representan un bloque que se puede reutilizar en diferentes partes del sitio/aplicacion obteniendo el mismo resultado o uno diferente
 
 */
 
@@ -26,14 +29,9 @@ function App() {
   //<Header/>
   return (
     <>
-      <Header/>
-      <main>
-        <h2>Home</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere natus esse numquam nihil dignissimos eligendi, vel saepe pariatur aut voluptatum, ut excepturi eius doloremque exercitationem dolores cumque? Odit, saepe tempore?</p>
-      </main>
-      <footer>
-        <p>Copyright &copy; - Horacio Gutierrez</p>
-      </footer>
+      <Header />
+      <Main />
+      <Footer />
     </>
   )
 }

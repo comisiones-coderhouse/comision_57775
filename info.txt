@@ -43,3 +43,21 @@ JSX
 JSX es una extension de la sintaxis de JavaScript que nos permite escribir HTML en JavaScript de manera mas sencilla y legible y que luego es transformado a JavaScript puro mediante Babel.
 
 < App />
+
+
+
+CLASE 4 ------------------------------------------
+
+Props : son los parametros que se le pasan a un componente. Por default son de solo lectura y no se pueden modificar y viene predefinido como un objeto. 
+
+
+Estados de un componente : Queda pendiente y se ve la clase que viene
+
+imagenes
+
+css frameworks
+
+- bootstrap : https://getbootstrap.com/  | https://react-bootstrap.github.io/
+- tailwind (*) : https://tailwindcss.com/
+- Material UI : https://mui.com/
+- Ant Design : https://ant.design/
