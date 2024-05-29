@@ -15,7 +15,7 @@ function Button(props) {
   }
 
   return (
-    <button className="btn" onClick={hacerClick} >{props.texto}</button>
+    <button className="bg-red-950 p-4 mx-2 rounded-md hover:bg-red-300 transition-all duration-300" onClick={hacerClick} >{props.texto}</button>
   )
 }
 export default Button

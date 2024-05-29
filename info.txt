@@ -59,5 +59,31 @@ css frameworks
 
 - bootstrap : https://getbootstrap.com/  | https://react-bootstrap.github.io/
 - tailwind (*) : https://tailwindcss.com/
+https://tailwindcss.com/docs/guides/vite
 - Material UI : https://mui.com/
 - Ant Design : https://ant.design/
+
+
+
+AFTER 1 ------------------------------------------
+
+Common Command Line Commands
+
+cd : change directory - Cambia el directorio actual
+ls : list - Muestra los archivos y carpetas en el directorio actual
+pwd : print working directory - Muestra la ruta del directorio actual
+touch : crea un archivo
+mkdir : crea una carpeta
+rm : remove - Elimina un archivo
+rm -r : remove recursively - Elimina una carpeta
+code . : abre Visual Studio Code en el directorio actual
+
+
+git init : inicializa un repositorio de git - crea una carpeta llamada .git en el directorio actual
+
+git status : muestra el estado de los archivos en el repositorio de git
+
+git clone
+git add
+git commit
+git push
