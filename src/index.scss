@@ -20,19 +20,7 @@ $bgPrimary:#242424;
 }
 
 .btn {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.5;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  user-select: none;
-  transition: background-color 0.2s, color 0.2s;
-  background-color: rgba(255, 255, 255, 0.08);
+  @apply inline-block px-4 py-2 font-semibold text-white bg-blue-500 rounded cursor-pointer text-center transition duration-200 ease-in-out;
 }
 
 img {

@@ -1,21 +1,38 @@
-/* 
+import { useEffect, useState } from "react"
 
-const btn = document.querySelector('.btn');
-btn.addEventListener('click', hacerClick)
+function Button() {
+  //estado
+  const [estado, setEstado] = useState(false)
+  
+  //useEffect(function [ ,array ])
+  //console.log("hago un fetch a una db")
 
-function hacerClick() {}
-
-*/
-
-function Button(props) {
+  useEffect(()=>{
+    console.log("Soy un efecto")
+  },[])
 
 
+  //acciones
   const hacerClick = () => {
-    console.log("click")
+    setEstado(!estado)
   }
 
+  //vista
+  if (estado === false) {
+    return (
+      <div>
+        <button onClick={hacerClick} className="btn">toggle</button>
+      </div>
+    )
+  }
+  
   return (
-    <button className="bg-red-950 p-4 mx-2 rounded-md hover:bg-red-300 transition-all duration-300" onClick={hacerClick} >{props.texto}</button>
+    <div>
+      <button onClick={hacerClick} className="btn">toggle</button>
+      <div className="p-4 text-black bg-white rounded-sm">
+        soy un popup
+      </div>
+    </div>
   )
 }
 export default Button

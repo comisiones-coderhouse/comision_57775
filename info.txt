@@ -87,3 +87,112 @@ git clone
 git add
 git commit
 git push
+
+
+CLASE 5 ------------------------------------------
+
+Tailwind extensiones : 
+
+https://marketplace.visualstudio.com/items?itemName=pranaygp.vscode-css-peek
+https://marketplace.visualstudio.com/items?itemName=heybourn.headwind
+https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
+
+
+Hooks : es una funcion que nos permite agregar funcionalidades a un componente. Siempre se ejecutan dentro de un componente y no se pueden ejecutar en un condicional o un loop.
+
+- useState : nos permite agregar estados a un componente
+- useEffect : nos permite agregar efectos secundarios a un componente
+- useRef
+- useContext
+
+Destructuring 
+
+const nombres = ['Juan', 'Pedro', 'Maria'];
+
+const juan = nombres[0];
+const pedro = nombres[1];
+const maria = nombres[2];
+
+const [juan,pedro,maria] = nombres
+
+
+const [var1,var2,...varN] = elArrayOriginal
+
+
+
+
+
+EJEMPLO 1 : 
+
+import { useState } from "react"
+
+
+function Button(props) {
+  //estados
+  /*
+  const arrayDeValores = useState("valor inicial")
+  const miEstado = arrayDeValores[0]//Esta es la variable reactiva o el "estado"
+  const setMiEstado = arrayDeValores[1]//Esta es la función que modifica el estado 
+  */
+  const [miEstado, setMiEstado] = useState("valor inicial")
+
+  //arrayDeValores[0] = "nuevo valor"
+  
+  /* const valores2 = useState(0)
+  
+  console.log(valores1)
+  console.log(valores2) */
+
+
+  //acciones
+  const hacerClick = () => {
+    console.log("click")
+    //miEstado = 'nuevo valor'
+    setMiEstado("nuevo valor")
+  }
+  
+
+  //vista
+  return (
+    <button className="btn" onClick={hacerClick}>{miEstado}</button>
+  )
+}
+
+export default Button
+
+
+
+
+
+EJEMPLO 2
+
+
+import { useState } from "react"
+
+function Button() {
+  //Estado
+  const [contador,setContador] = useState(0)
+
+  //Acciones
+  const hacerClick = () => {
+    console.log("Click")
+    //contador++
+    //contador = contador + 1
+    //contador += 1
+    //console.log(contador)
+    //setContador(contador++)
+    setContador(contador + 1)
+  }
+
+  //Vista
+  return (
+    <div>
+      <button onClick={hacerClick} className="btn">click</button>
+      <p>Contador : {contador}</p>
+    </div>
+  )
+}
+export default Button
+
+
+
