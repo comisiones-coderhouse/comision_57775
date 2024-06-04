@@ -196,3 +196,29 @@ export default Button
 
 
 
+
+
+CLASE 6 ------------------------------------------
+
+Tipos de componentes : 
+
+- Estructurales 
+- Reutilizables
+
+- Contenedores -> Presentacionales
+
+Container Design Pattern : es un patron de diseño que nos permite separar la logica de negocio de la logica de presentacion.
+
+
+API
+
+API WEB - API REST
+
+
+https://github.com/public-apis/public-apis
+https://randomfox.ca/floof/
+
+
+https://fakestoreapi.com/docs 
+https://dummyjson.com/docs/products#products-all
+https://www.themealdb.com/api.php

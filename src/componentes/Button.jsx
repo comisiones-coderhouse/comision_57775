@@ -3,13 +3,13 @@ import { useEffect, useState } from "react"
 function Button() {
   //estado
   const [estado, setEstado] = useState(false)
-  
-  //useEffect(function [ ,array ])
-  //console.log("hago un fetch a una db")
 
-  useEffect(()=>{
-    console.log("Soy un efecto")
-  },[])
+  //useEffect(function,array)
+  /* 
+  useEffect(() => {
+    console.log("pedido a la api de ML, me traigo 1000 productos")
+  },[]) 
+  */
 
 
   //acciones
@@ -25,7 +25,7 @@ function Button() {
       </div>
     )
   }
-  
+
   return (
     <div>
       <button onClick={hacerClick} className="btn">toggle</button>
@@ -35,4 +35,5 @@ function Button() {
     </div>
   )
 }
+
 export default Button
