@@ -222,3 +222,33 @@ https://randomfox.ca/floof/
 https://fakestoreapi.com/docs 
 https://dummyjson.com/docs/products#products-all
 https://www.themealdb.com/api.php
+
+
+
+CLASE 7 ------------------------------------------
+
+MVC : Modelo, Vista, Controlador 
+
+Reejecucion de un componente : 
+
+1) Cada vez que un estado cambia
+2) Cada vez que cambian los props
+3) Cada vez que un componente padre se re-renderiza
+
+
+const nombres = ['Juan', 'Pedro', 'Maria'];
+
+const r = nombres.forEach((item,index)=>{
+
+})
+
+const r = nombres.map((item,index)=>{
+  return "horacio" + index
+})
+//[horacio0,horacio1,horacio2]
+
+
+nombres.filter((item,index)=>{})
+nombres.find((item,index)=>{})
+nombres.reduce(()=>{})
+nombres.sort(()=>{})
