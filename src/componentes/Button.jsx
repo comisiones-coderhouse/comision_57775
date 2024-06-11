@@ -1,15 +1,10 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
+import { useDesktop } from "../utils"
 
-function Button() {
-  //estado
+function Button({ children }) {
+  //estados
   const [estado, setEstado] = useState(false)
-
-  //useEffect(function,array)
-  /* 
-  useEffect(() => {
-    console.log("pedido a la api de ML, me traigo 1000 productos")
-  },[]) 
-  */
+  const isDesktop = useDesktop()
 
   //acciones
   const hacerClick = () => {
@@ -20,19 +15,32 @@ function Button() {
   if (estado === false) {
     return (
       <div>
-        <button onClick={hacerClick} className="btn">toggle</button>
+        <button onClick={hacerClick} className="btn">{children}</button>
+      </div>
+    )
+  }
+
+
+  if (isDesktop) {
+    return (
+      <div>
+        <button onClick={hacerClick} className="btn">{children}</button>
+        <div className="p-4 text-black bg-white rounded-sm">
+          soy un popup
+        </div>
       </div>
     )
   }
 
   return (
     <div>
-      <button onClick={hacerClick} className="btn">toggle</button>
-      <div className="p-4 text-black bg-white rounded-sm">
+      <button onClick={hacerClick} className="btn">{children}</button>
+      <div className="fixed p-4 text-black bg-white border-2 border-black rounded-sm bottom-10 right-10">
         soy un popup
       </div>
     </div>
   )
+
 }
 
 export default Button

@@ -252,3 +252,88 @@ nombres.filter((item,index)=>{})
 nombres.find((item,index)=>{})
 nombres.reduce(()=>{})
 nombres.sort(()=>{})
+
+
+AFTER 2 ------------------------------------------
+
+https://tailblocks.cc/
+https://mambaui.com/components/profile
+https://marketplace.visualstudio.com/items?itemName=alfredbirk.tailwind-documentation
+https://magicui.design/docs/components/dot-pattern
+https://ui.aceternity.com/
+https://ui.shadcn.com/
+https://javascript.info/fetch-api
+
+Fetch => Api WEB
+fetch() => Function
+
+Promise => Api WEB
+promise => Object
+
+HTTP => HyperText Transfer Protocol
+
+
+Request(Cliente)
+
+URL/IP - METODO(GET/POST/PUT/DELETE)
+HEADERS - BODY
+
+
+Response(Servidor)
+
+CODIGO - MENSAJE
+
+1xx - Información
+2xx - Aceptado
+3xx - Redireccionado
+4xx - Error de cliente
+    401 - Unauthorized
+    403 - Forbidden
+    404 - Not Found
+    405 - Method Not Allowed
+
+5xx - Error de servidor
+    500 - Internal Server Error
+    502 - Bad Gateway
+    503 - Service Unavailable
+    504 - Gateway Timeout
+
+    HEADERS - BODY
+
+
+fetch("https://dummyjson.com/products")
+.then((res)=>{
+
+  res.status//200
+  res.ok //true
+  res.headers //{...}
+  res.body
+  
+  res.text()
+  res.formData()
+  res.arrayBuffer()
+  res.blob()
+
+  return res.json()
+})
+.then((res)=>{
+  console.log(res)
+})
+.catch((err)=>{
+  
+})
+
+
+
+CLASE 8 --------------------------------------------------------------------
+
+Hooks : hacer hooks customizados
+Children : otra manera de pasar props
+Evento de teclado (pendiente) - evento de resize
+Patrones : HoC
+
+
+  //useEffect(() => {}) : se ejecuta una vez y cada vez que el componente recargue
+  //useEffect(() => {},[]) : se ejecuta una vez sola
+  //useEffect(() => {},[x,y]) : se ejecuta una vez al principio y cuando cambia el valor de x o y
+  //useEffect(() => { return ()=>{} },[])
