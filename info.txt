@@ -337,3 +337,21 @@ Patrones : HoC
   //useEffect(() => {},[]) : se ejecuta una vez sola
   //useEffect(() => {},[x,y]) : se ejecuta una vez al principio y cuando cambia el valor de x o y
   //useEffect(() => { return ()=>{} },[])
+
+
+CLASE 9 --------------------------------------------------------------------
+
+Routing
+
+react-router-dom
+
+SPA : Single Page Application
+
+
+Enrutador : Envuelve toda la aplicacion dandole capacidades especiales, especificamente la navegacion 
+
+
+
+{/* <h2 className="mb-6 text-3xl font-bold">Home</h2>
+      <p className="mb-10">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere natus esse numquam nihil dignissimos eligendi, vel saepe pariatur aut voluptatum, ut excepturi eius doloremque exercitationem dolores cumque? Odit, saepe tempore?</p>
+      <ProductosContainer /> */}

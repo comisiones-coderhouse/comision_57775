@@ -6,4 +6,6 @@ import './index.scss'
 const root = document.getElementById('root')
 const vRoot = ReactDOM.createRoot(root)
 
-vRoot.render(<App />)
+vRoot.render(
+  <App />
+)

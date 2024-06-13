@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import Productos from "./Productos"
+import { useParams } from "react-router-dom";
 
 function ProductosContainer() {
 
   const [productos, setProductos] = useState([])
   const [pagina, setPagina] = useState(1)
   const [mostrar, setMostrar] = useState(true)
+
+  const params = useParams()
+  console.log(params)
 
   useEffect(() => {
 
