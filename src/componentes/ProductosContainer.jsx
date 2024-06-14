@@ -5,30 +5,51 @@ import { useParams } from "react-router-dom";
 function ProductosContainer() {
 
   const [productos, setProductos] = useState([])
-  const [pagina, setPagina] = useState(1)
   const [mostrar, setMostrar] = useState(true)
-
-  const params = useParams()
-  console.log(params)
+  const params = useParams() //{id:?}
 
   useEffect(() => {
 
-    /*  console.log("Pedido a una api...")
-     console.log("URL : https://dummyjson.com/products")
-     console.log("Pagina : " + pagina)
-     console.log("-----------------------------------------------------------") */
+    /* 
+    
+    const simulacionPedido = new Promise((res)=>{
+      setTimeout(()=>{
+        //res(elArrayDelArchivoJSon)
+        res()
+      },2000)
+    })
 
-    fetch('https://dummyjson.com/products')
-      .then((res) => {
-        return res.json()
+    simulacionPedido
+      .then(() => {
+        console.log("simulacion")
       })
-      .then((data) => {
-        /* console.log(data.products) */
-        setProductos(data.products)
-      })
+      .catch(() => {
 
+      }) 
 
-  }, [pagina])
+      
+    */
+
+    if (params.id) {
+      fetch('https://dummyjson.com/products/category/' + params.id)
+        .then((res) => {
+          return res.json()
+        })
+        .then((data) => {
+          //data.filter()
+          setProductos(data.products)
+        })
+    } else {
+      fetch('https://dummyjson.com/products')
+        .then((res) => {
+          return res.json()
+        })
+        .then((data) => {
+          setProductos(data.products)
+        })
+    }
+
+  }, [params.id])
 
   const mostrarProductos = () => {
     setMostrar(!mostrar)

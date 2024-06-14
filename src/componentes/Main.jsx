@@ -8,36 +8,10 @@ function Main() {
   return (
     <main className="p-4 bg-[rgba(255,255,255,0.3)] grow">
       <Routes>
-        <Route path="/" element={<p>Home</p>}/>
-        {/* 
-        <Route path="/ropa" element={<ProductosContainer/>}/>
-        <Route path="/electro" element={<ProductosContainer/>}/> 
-        */}
-
-        {/* 
-        
-          /categoria/ropa
-          /categoria/electro
-          /categoria/perfumes
-          /categoria/?
-          
-        */}
-        <Route path="/categoria/:id" element={<ProductosContainer/>}/>
-
-        <Route path="/productos" element={<ProductosContainer/>}/>
-        {/* <Route path="/carrito/*" element={<Carrito/>}/> */}
-        {/* <Route path="/carrito/:unTexto" element={<Carrito/>}/> */}
-        <Route path="/carrito" element={<Carrito/>}/>
-
-        {/* 
-
-          caracteres comodines :
-
-          * : cualquier cosa que no sea una palabra clave
-          ? : cualquier cosa que sea una palabra clave
-          : : cualquier cosa que sea una palabra clave
-        
-        */}
+        <Route path="/" element={<p>Home</p>} />
+        <Route path="/categoria/:id" element={<ProductosContainer />} />
+        <Route path="/productos" element={<ProductosContainer />} />
+        <Route path="/carrito" element={<Carrito />} />
       </Routes>
     </main>
   )

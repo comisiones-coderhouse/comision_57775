@@ -355,3 +355,35 @@ Enrutador : Envuelve toda la aplicacion dandole capacidades especiales, especifi
 {/* <h2 className="mb-6 text-3xl font-bold">Home</h2>
       <p className="mb-10">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere natus esse numquam nihil dignissimos eligendi, vel saepe pariatur aut voluptatum, ut excepturi eius doloremque exercitationem dolores cumque? Odit, saepe tempore?</p>
       <ProductosContainer /> */}
+
+
+
+
+  SEGUNDA PRE ENTREGA : 
+
+  Componentes : 
+
+    - App 
+      |- NavBar
+      |  |- CartWidget
+      |- Routes
+        |
+        |- Route(/)
+        |  |- ItemListContainer
+        |  |  |- ItemList
+        |  |    |- Item
+        |
+        |- Route(/category/:id)
+        |  |- ItemListContainer
+        |
+        |- Route(/item/:id)
+        |  |- ItemDetailContainer
+        |       |- ItemDetail
+        |       |- ItemCount (*opcional*)
+
+
+  RUTAS a configurar : 
+
+  / => ItemListContainer
+  /category/:id => ItemListContainer
+  /item/:id => ItemDetailContainer
