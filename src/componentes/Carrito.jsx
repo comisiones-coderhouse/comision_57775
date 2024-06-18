@@ -1,25 +1,33 @@
-import { useParams } from "react-router-dom"
+import { useState } from "react"
+import Input from "./Input"
 
-function Carrito() {
+const Carrito = () => {
 
-  /* 
-  const params = useParams()
-  console.log(params) 
-  */
+  const [data, setData] = useState(0)
+  const [error, setError] = useState(false) 
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  } 
+
+  const handleStateUplifting = (long) => {
+    setData(long)
+    if(long > 10) {
+      setError(true)
+    } else {
+      setError(false)
+    }
+  }
 
   return (
     <div>
       <h2>Carrito</h2>
-      <p>No tenes productos en tu carrito</p>
-      <form>
-        <div>
-          <label>Nombre</label>
-          <input type="text" name="nombre" />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input type="email" name="email" />
-        </div>
+      <p>El input hijo tiene {data} caracteres</p>
+      { error ?  <p className="text-sm font-bold text-red-500"> Te pasaste </p>  : null }
+      <form onSubmit={handleSubmit}>
+        <Input
+          onStateUplifting={handleStateUplifting}
+        />
         <button>Enviar</button>
       </form>
     </div>

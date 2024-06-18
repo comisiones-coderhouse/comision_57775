@@ -6,29 +6,9 @@ function ProductosContainer() {
 
   const [productos, setProductos] = useState([])
   const [mostrar, setMostrar] = useState(true)
-  const params = useParams() //{id:?}
+  const params = useParams()
 
   useEffect(() => {
-
-    /* 
-    
-    const simulacionPedido = new Promise((res)=>{
-      setTimeout(()=>{
-        //res(elArrayDelArchivoJSon)
-        res()
-      },2000)
-    })
-
-    simulacionPedido
-      .then(() => {
-        console.log("simulacion")
-      })
-      .catch(() => {
-
-      }) 
-
-      
-    */
 
     if (params.id) {
       fetch('https://dummyjson.com/products/category/' + params.id)
@@ -36,7 +16,6 @@ function ProductosContainer() {
           return res.json()
         })
         .then((data) => {
-          //data.filter()
           setProductos(data.products)
         })
     } else {

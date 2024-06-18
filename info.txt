@@ -387,3 +387,136 @@ Enrutador : Envuelve toda la aplicacion dandole capacidades especiales, especifi
   / => ItemListContainer
   /category/:id => ItemListContainer
   /item/:id => ItemDetailContainer
+
+
+CLASE 10 --------------------------------------------------------------------
+
+Eventos :
+State Uplifting : Es como lo opuesto a los props o "Como pasarle datos de un componente hijo a un componente padre"
+
+
+1- El componente padre tiene que tener una funcion en su interior
+2- El componente padre tiene que tener un estado donde se reciba la informacion del componente hijo
+3- Le tengo que pasar la funcion a la componente hijo
+4- Recibo esa funcion como prop en el componente hijo
+5- Ejecuto la funcion que recibo en el componente hijo dentro de un evento; le puedo pasar parametros, los cuales se van a recibir en la funcion del paso 1
+6- Los valores recibidos se almacenan en el estado del componente padre
+
+
+// Element.addEventListener('evento',callback)
+// <Element onEvento={callback}>
+/* 
+
+El Objeto Evento : Es como un objeto "Global"
+
+PROPAGACION DE EVENTOS : 
+
+Bubbling : El evento se propaga desde el elemento hijo hasta el padre 
+
+*/
+
+import { useRef, useState } from "react"
+import validator from "validator"
+
+function Carrito() {
+
+  const [error, setError] = useState(false)
+  const [message, setMessage] = useState("")
+  const ref = useRef(null)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(e)
+    console.log("Submit")
+  }
+
+  const handleChange = (e) => {
+    console.log("Change")
+    /* 
+    input.value 
+    */
+    const input = document.querySelector("input")
+    console.log(input.value)
+    console.log(e.target.value)
+  }
+
+  const handleKeyDown = (e) => {
+    console.log(e.key)
+    //if (e.key === "1") {
+    //validator.isNumeric() => true | false
+    if (validator.isNumeric(e.key)) {
+      e.preventDefault()
+      setError(true)
+      setMessage("No se puede usar el número 1")
+    } else {
+      setError(false)
+    }
+    console.log("KeyDown")
+  }
+
+  const handleInput = () => {
+    console.log("Input")
+  }
+
+  const handleKeyUp = () => {
+    console.log("KeyUp")
+  }
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    console.log(e.currentTarget)
+    console.log("Click button")
+  }
+
+  const handleClickDiv = (e) => {
+    console.log(e.currentTarget)
+    console.log("ClickDiv")
+  }
+
+  const handleEmailChange = () => {
+    console.log(ref.current)
+    console.log(ref.current.value)
+  }
+
+  /* 
+  
+
+  OPERADOR TERNARIO : Es una especie de condicional if/else
+  
+
+  const resultado  = if() {} else {}   => Esto es sintacticamente incorrecto
+
+  if(error) { return "Hubo un error" } else { return "No hubo error" }
+
+  error ? "Hubo un error" : "No hubo error"
+  
+  */
+
+  return (
+    <div onClick={handleClickDiv}>
+      <h2>Carrito</h2>
+      <p>No tenes productos en tu carrito</p>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Nombre</label>
+          {error ? <p className="text-sm font-bold text-red-500">Hubo un error</p> : null}
+          <input
+            type="text"
+            name="nombre"
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+            onInput={handleInput}
+            onKeyUp={handleKeyUp}
+          />
+        </div>
+        <div>
+          <label htmlFor="email">Email</label>
+          <input type="email" name="email" ref={ref} onChange={handleEmailChange}/>
+        </div>
+        <button onClick={handleClick}>Enviar</button>
+      </form>
+    </div>
+  )
+}
+export default Carrito
