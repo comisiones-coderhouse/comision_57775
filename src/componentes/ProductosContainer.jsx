@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Productos from "./Productos"
 import { useParams } from "react-router-dom";
+import PageTitle from "./PageTitle";
 
 function ProductosContainer() {
 
@@ -34,19 +35,12 @@ function ProductosContainer() {
     setMostrar(!mostrar)
   }
 
-  if (mostrar) {
-    return (
-      <div>
-        <button onClick={mostrarProductos}>mostrar productos</button>
-        <Productos productos={productos} />
-      </div>
-    )
-  } else {
-    return (
-      <div>
-        <button onClick={mostrarProductos}>mostrar productos</button>
-      </div>
-    )
-  }
+  return (
+    <>
+      <PageTitle title="Productos" />
+      <Productos productos={productos} />
+    </>
+  )
 }
+
 export default ProductosContainer

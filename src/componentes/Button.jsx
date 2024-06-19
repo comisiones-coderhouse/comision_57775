@@ -1,46 +1,31 @@
-import { useState } from "react"
-import { useDesktop } from "../utils"
+import { Link } from "react-router-dom"
+import { twMerge } from "tailwind-merge"
 
-function Button({ children }) {
-  //estados
-  const [estado, setEstado] = useState(false)
-  const isDesktop = useDesktop()
+function Button({ children, onClick, type = "primary" , href = "/" }) {
 
-  //acciones
-  const hacerClick = () => {
-    setEstado(!estado)
+  const baseClass = "inline-block px-4 py-2 font-semibold rounded cursor-pointer  text-center transition duration-200 ease-in-out"
+
+  const variantes = {
+    "primary": "text-white bg-blue-500",
+    "error": "bg-red-500",
+    "ghost": "bg-transparent border border-blue-500 hover:border-blue-400",
+    "icon": "p-4 bg-transparent rounded-full border border-blue-500 hover:border-blue-400 hover:bg-blue-500",
+    "link" : "bg-blue-500 text-white hover:bg-blue-700"
   }
 
-  //vista
-  if (estado === false) {
-    return (
-      <div>
-        <button onClick={hacerClick} className="btn">{children}</button>
-      </div>
-    )
-  }
+  const className = twMerge(baseClass, variantes[type])
 
-
-  if (isDesktop) {
+  if(type === "link") {
     return (
-      <div>
-        <button onClick={hacerClick} className="btn">{children}</button>
-        <div className="p-4 text-black bg-white rounded-sm">
-          soy un popup
-        </div>
-      </div>
+      <Link to={href} className={className}>
+        {children}
+      </Link>
     )
   }
 
   return (
-    <div>
-      <button onClick={hacerClick} className="btn">{children}</button>
-      <div className="fixed p-4 text-black bg-white border-2 border-black rounded-sm bottom-10 right-10">
-        soy un popup
-      </div>
-    </div>
+    <button onClick={onClick} className={className}>{children}</button>
   )
-
 }
 
 export default Button
