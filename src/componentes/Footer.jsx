@@ -3,10 +3,7 @@ import NavBar from "./NavBar"
 
 function Footer() {
 
-  //estados
   const isDesktop = useDesktop()
-
-  console.log(isDesktop)
 
   return (
     <footer className="p-4 text-center">

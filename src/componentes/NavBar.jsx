@@ -1,7 +1,12 @@
 import { ShoppingCart } from "lucide-react"
+import { useContext } from "react"
 import { Link, NavLink } from "react-router-dom"
+import { miContexto } from "./CartProvider"
 
 function NavBar(props) {
+
+  const valorDelContexto = useContext(miContexto)
+
   if (props.isHeader == true) {
     return (
       <nav className="flex items-center gap-4">
@@ -10,7 +15,7 @@ function NavBar(props) {
         <NavLink to="/categoria/furniture">muebles</NavLink>
         <NavLink to="/categoria/laptops">laptops</NavLink> 
         <NavLink to="/carrito" className="flex items-center gap-2">
-          carrito
+          {valorDelContexto.cant}
           <ShoppingCart/>
         </NavLink>  
       </nav>

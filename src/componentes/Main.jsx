@@ -6,7 +6,7 @@ import DetalleContainer from "./DetalleContainer";
 
 function Main() {
   return (
-    <main className="p-8 pb-20 bg-slate-200 grow text-black">
+    <main className="bg-slate-200 p-8 pb-20 text-black grow">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/categoria/:id" element={<ProductosContainer />} />

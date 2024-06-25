@@ -204,8 +204,8 @@ Tipos de componentes :
 
 - Estructurales 
 - Reutilizables
-
 - Contenedores -> Presentacionales
+- Providers
 
 Container Design Pattern : es un patron de diseño que nos permite separar la logica de negocio de la logica de presentacion.
 
@@ -520,3 +520,43 @@ function Carrito() {
   )
 }
 export default Carrito
+
+
+CLASE 11 --------------------------------------------------------------------
+
+Context API : Es una API que nos permite acceder a los datos de un componente desde multiples componentes hijos sin la necesidad de pasar por props, es decir, componentes intermedios.
+
+
+Darle valor al contexto : 
+
+<Provider value={valorDelContexto}>
+
+</Provider>
+
+
+
+
+Consumir el contexto :
+
+useContext(miContexto)
+
+
+
+<Componente propName="propValue" />
+
+
+<Componente>
+  soy un prop
+</Componente>
+
+
+
+Paso a paso : 
+
+1) importo la funcion createContext
+2) crear el contexto ej : const miContexto = createContext()
+3) se saca el provider ej : const Provider = miContexto.Provider
+4) me creo un componente propio 
+5) Uso el provider del paso 3 en el componente propio del paso 4
+6) Al providero del paso 3 le configuro el prop "value", que va a ser el valor del contexto(osea lo global)
+7) Uso mi componente propio del paso 4 en la aplicacion principal envolviendo todos los otros componentes
