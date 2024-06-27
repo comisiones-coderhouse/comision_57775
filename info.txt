@@ -553,10 +553,22 @@ useContext(miContexto)
 
 Paso a paso : 
 
+0) creo un archivo nuevo para el desarrollo de mi contexto
 1) importo la funcion createContext
 2) crear el contexto ej : const miContexto = createContext()
 3) se saca el provider ej : const Provider = miContexto.Provider
 4) me creo un componente propio 
 5) Uso el provider del paso 3 en el componente propio del paso 4
-6) Al providero del paso 3 le configuro el prop "value", que va a ser el valor del contexto(osea lo global)
+6) Al provider del paso 3 le configuro el prop "value", que va a ser el valor del contexto(osea lo global)
 7) Uso mi componente propio del paso 4 en la aplicacion principal envolviendo todos los otros componentes
+8) Integrar el valor del contexto/provider del componente del paso 4 con algun tipo de estado, esto asegura que todos los componentes que usen el contexto/provider hagan er-render
+9) ir hasta cualquier otro componente y usar el contexto con la formula : 
+
+  const miContexto = useContext(miContexto)
+
+
+CLASE 12 -----------------------------------------------------------
+
+//sea de su agrado mostrarme el contenido de dicho alimento cuya jerga a de llamarse "churrasco"
+
+https://www.npmjs.com/package/tailwind-merge

@@ -5,7 +5,7 @@ import { PackageOpen, Search } from "lucide-react"
 function Header() {
   return (
     <header className="flex justify-between p-4">
-      <h1 className="text-2xl font-bold flex items-center gap-2">
+      <h1 className="flex items-center gap-2 font-bold text-2xl">
         <PackageOpen />
         CoderCommerce
       </h1>
