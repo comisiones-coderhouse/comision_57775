@@ -572,3 +572,41 @@ CLASE 12 -----------------------------------------------------------
 //sea de su agrado mostrarme el contenido de dicho alimento cuya jerga a de llamarse "churrasco"
 
 https://www.npmjs.com/package/tailwind-merge
+
+
+CLASE 13 -----------------------------------------------------------
+
+Firebase : es una plataforma de google que nos permite usar distintos servicios de google sin tener que pagar por ellos, como almacenamiento, base de datos, autenticacion, hosting, etc.
+
+Proyecto de firebase : necesario para poder usar los servicios de firebase
+
+Bases de datos : 
+
+
+Relacional (SQL/SQLite/PostgreSQL/MySQL/Oracle/SQL Server/etc)
+Base de datos : Seria todo el servidor
+Tablas : Son divisiones internas de la base de datos
+Columnas : Son los campos de la tabla
+Registros : Son los datos de la tabla, cada una de las filas
+
+
+NoRelacional (MongoDB/Firestore/Cassandra/CouchDB/dynamoDB/etc)
+Base de datos : Seria todo el servidor
+Colecciones : Son divisiones internas de la base de datos (simil array)
+Propiedades : Son los campos de la coleccion (simil columnas)
+Documentos : Es cada cosa guardada en la coleccion (simil objeto)
+
+Vectoriales
+Grafos
+
+
+Paso a paso de implementacion de firebase : 
+
+1) Obtengo las credenciales de firebase
+2) Creo un archivo llamado firebaseConfig.js
+3) Importo la funcion initializeApp de firebase
+4) Creo un objeto con las credenciales
+5) Le paso el objeto a la funcion initializeApp y obtengo en una variable la aplicacion ya conectada
+
+6) Usando la aplicacion que obtengo en el paso 5, le "extraigo" la base de datos con el metodo getFirestore
+7) De la base de datos que obtuve en el paso 6, le "extraigo" la coleccion con el metodo collection

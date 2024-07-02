@@ -6,7 +6,6 @@ import CartProvider from "./componentes/CartProvider.jsx";
 import UserProvider from "./componentes/UserProvider.jsx";
 
 function App() {
-
   return (
     <BrowserRouter>
       <CartProvider>
