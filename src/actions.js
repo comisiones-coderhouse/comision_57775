@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 import { app } from "./firebaseConfig";
-import { getFirestore, collection, getDoc, getDocs, updateDoc, addDoc, deleteDoc } from "firebase/firestore";
+import { getFirestore, collection, getDoc, getDocs, updateDoc, addDoc, deleteDoc, query, where, doc } from "firebase/firestore";
 
 const db = getFirestore(app);
 const collectionDeProductos = collection(db, "productos")
@@ -36,33 +36,15 @@ export function generateProducts(cant) {
 }
 
 export function getProducts() {
-  //const consulta = fetch(....)
-  //consulta.then((res)=>{ return res.json() })
-  //consulta.then((res)=>{ console.log(res) })
 
-  /* const consulta =  */
   return getDocs(collectionDeProductos)
     .then((res) => {
-      //res == es la respuesta de la consulta
-      //res.docs == es un array de objetos con referencias a los documentos, no los documentos mismos
-      //res.docs[N] == es un objeto con referencia a un documento
-      //res.docs[N].data() == Data es una funcion/metodo que devuelve el contenido del documento
-
-      //const productos = []
-
       const productos = res.docs.map((doc) => {
-        /* console.log(doc.id)
-        console.log(doc.data()) */
-
         const producto = doc.data() //{ id, title, description, category, price, stock, image }
-        //producto.id = doc.id
-        producto._id = doc.id
-        //productos.push(producto)
+        producto._id = doc.id //{...,_id }
         return producto
       })
-
       return productos
-
     })
     .catch(() => {
       console.log("Hubo un error")
@@ -83,8 +65,75 @@ export async function getProductsAsync() {
 
 }
 
-function getProductsByCategory() { }
+export function getProductsByCategory(category = "Sports") {
 
-function getProductsById() { }
+  const filtro = query(collectionDeProductos, where("category", "==", category))
+  //const consulta = getDocs(filtro)
+  //consulta.then((res) => {
+  return getDocs(filtro)
+    .then((res) => {
+      const productos = res.docs.map((doc) => {
+        const producto = doc.data()
+        producto._id = doc.id
+        return producto
+      })
+      return productos
+    })
+    .catch(() => {
+      console.log("Hubo un error")
+    })
+}
+
+export async function getProductsByCategoryAsync(category = "Sports") {
+
+  const filtro = query(collectionDeProductos, where("category", "==", category))
+
+  const res = await getDocs(filtro)
+
+  const productos = res.docs.map((doc) => {
+    const producto = doc.data()
+    producto._id = doc.id
+    return producto
+  })
+
+  return productos
+
+}
+
+export function getProductsById() {
+  const id = "JSeN0hs1Bn0fUCsBv3xh"
+  const filtro = doc(collectionDeProductos, id)
+  const consulta = getDoc(filtro)
+
+  consulta
+    .then((res) => {
+      const producto = res.data()
+      producto._id = res.id
+      return producto
+    })
+    .catch((err) => { })
+}
+
+export async function getProductsByIdAsync(id) {
+
+  try {
+    //const id = "JSeN0hs1Bn0fUCsBv3xh"
+    const filtro = doc(collectionDeProductos, id)
+    const res = await getDoc(filtro)
+
+    const producto = res.data()
+    producto._id = res.id
+    return producto
+  } catch (err) {
+    console.log(err)
+    return null
+  }
+}
+
+
+
+
+//getProductsByIdAsync()
 
 function createNewOrder() { }
+

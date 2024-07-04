@@ -6,7 +6,7 @@ function Producto({ producto }) {
 
   const valorDelContexto = useContext(miContexto)
 
-  console.log(producto)
+  //console.log(producto)
 
   const handleClick = () => {
     valorDelContexto.fn()

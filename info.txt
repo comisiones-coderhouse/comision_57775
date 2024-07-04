@@ -610,3 +610,91 @@ Paso a paso de implementacion de firebase :
 
 6) Usando la aplicacion que obtengo en el paso 5, le "extraigo" la base de datos con el metodo getFirestore
 7) De la base de datos que obtuve en el paso 6, le "extraigo" la coleccion con el metodo collection
+
+
+CLASE 14 -----------------------------------------------------------
+
+//const consulta = fetch(....)
+  //consulta.then((res)=>{ return res.json() })
+  //consulta.then((res)=>{ console.log(res) })
+
+  /* const consulta =  */
+  return getDocs(collectionDeProductos)
+    .then((res) => {
+      //res == es la respuesta de la consulta
+      //res.docs == es un array de objetos con referencias a los documentos, no los documentos mismos
+      //res.docs[N] == es un objeto con referencia a un documento
+      //res.docs[N].data() == Data es una funcion/metodo que devuelve el contenido del documento
+
+      //const productos = []
+
+      const productos = res.docs.map((doc) => {
+        /* console.log(doc.id)
+        console.log(doc.data()) */
+
+        const producto = doc.data() //{ id, title, description, category, price, stock, image }
+        //producto.id = doc.id
+        producto._id = doc.id
+        //productos.push(producto)
+        return producto
+      })
+
+      return productos
+
+    })
+    .catch(() => {
+      console.log("Hubo un error")
+    })
+
+
+
+
+SINTAXIS DE MANUALES (a chequear)
+
+
+
+myFunc( string , string  [,string]) : Los corchetes son opcionales
+myFunc( string , string  , ?string) : El ? significa opcional
+myFunc(string|number) : El | significa OR , es decir, que la funcion puede recibir un string o un number
+myFunc(string|<customType>)
+myFunc(string|{customType}) 
+myFunc(string|customType)  : en este caso el customType se detalla mas abajo 
+myFunc(string,...DOMElement) : El ... significa que puede recibir mas de un parametro
+myFunc(string,DOMElement[]) : El [] significa que ese parametro es un array de tipo
+
+<customType> : number|boolean
+
+
+
+
+SELECT
+    [ALL | DISTINCT | DISTINCTROW]
+    [HIGH_PRIORITY]
+    [STRAIGHT_JOIN]
+    [SQL_SMALL_RESULT] [SQL_BIG_RESULT] [SQL_BUFFER_RESULT]
+    [SQL_CACHE | SQL_NO_CACHE] [SQL_CALC_FOUND_ROWS]
+    select_expr [, select_expr ...]
+    [ FROM table_references
+      [WHERE where_condition]
+      [GROUP BY {col_name | expr | position} [ASC | DESC], ... [WITH ROLLUP]]
+      [HAVING where_condition]
+      [ORDER BY {col_name | expr | position} [ASC | DESC], ...]
+      [LIMIT {[offset,] row_count | row_count OFFSET offset  [ROWS EXAMINED rows_limit] } |
+        [OFFSET start { ROW | ROWS }]
+        [FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } { ONLY | WITH TIES }] ]
+      procedure|[PROCEDURE procedure_name(argument_list)]
+      [INTO OUTFILE 'file_name' [CHARACTER SET charset_name] [export_options] |
+        INTO DUMPFILE 'file_name' | INTO var_name [, var_name] ]
+      [FOR UPDATE lock_option | LOCK IN SHARE MODE lock_option]
+export_options:
+    [{FIELDS | COLUMNS}
+        [TERMINATED BY 'string']
+        [[OPTIONALLY] ENCLOSED BY 'char']
+        [ESCAPED BY 'char']
+    ]
+    [LINES
+        [STARTING BY 'string']
+        [TERMINATED BY 'string']
+    ]
+lock_option:
+    [WAIT n | NOWAIT | SKIP LOCKED]

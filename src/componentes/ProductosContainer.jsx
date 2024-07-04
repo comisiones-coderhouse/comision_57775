@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import Productos from "./Productos"
 import { useParams } from "react-router-dom";
 import PageTitle from "./PageTitle";
-import { getProducts, getProductsAsync } from "../actions";
+import { getProducts, getProductsAsync , getProductsByCategory } from "../actions";
 
 
-/* getProducts().then((res)=>{ console.log(res) })
-getProductsAsync().then((res)=>{ console.log(res) }) */
+getProductsByCategory("Baby").then((res)=>{ console.log(res) })
 
 function ProductosContainer() {
 
@@ -25,14 +24,7 @@ function ProductosContainer() {
           setProductos(data.products)
         })
     } else {
-      /* fetch('https://dummyjson.com/products')
-        .then((res) => {
-          return res.json()
-        })
-        .then((data) => {
-          setProductos(data.products)
-        }) */
-      getProductsAsync().then((res) => { setProductos(res) })
+      getProducts().then((res) => { setProductos(res) })
     }
 
   }, [params.id])
